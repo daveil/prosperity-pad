@@ -1,0 +1,3 @@
+[submodule "traviso.js"]
+	path = traviso.js
+	url = https://github.com/axaq/traviso.js.git

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<map_data>
+    <tiles>
+        <tile id="1" movable="1">assets/sprites/floor_N.png</tile>
+    </tiles>
+	<objects>
+		 <object id="1" movable="1" interactive="0"  s="1x1">
+			<v id="idle">
+				<f>assets/sprites/wallCorner_N.png</f>
+			</v>
+		 </object>
+		  <object id="2" movable="1" interactive="0"  s="1x1">
+			<v id="idle">
+				<f>assets/sprites/wallStraight_W.png</f>
+			</v>
+		 </object>
+		  <object id="3" movable="1" interactive="0"  s="1x1">
+			<v id="idle">
+				<f>assets/sprites/wallStraight_E.png</f>
+			</v>
+		 </object>
+	</objects>
+	<initial_controllable_location c="1" r="1" />
+    <ground_map>
+        <row>1 ,1 ,1 ,1,1</row>
+        <row>1 ,1 ,1 ,1,1</row>
+        <row>1 ,1 ,1 ,1,1</row>
+        <row>1 ,1 ,1 ,1,1</row>
+    </ground_map>
+	<object_map>
+		<row>3 ,3 ,3 ,3,1</row>
+        <row>0 ,0 ,0 ,0,2</row>
+        <row>0 ,0 ,0 ,0,2</row>
+        <row>0 ,0 ,0 ,0,2</row>
+	</object_map>
+</map_data>
