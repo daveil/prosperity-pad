@@ -20,10 +20,13 @@ var instanceConfig ={
 	tileHeight : 150,
 	initialZoomLevel : -1,
 	initialPositionFrame:{x:300,y:350},
+	highlightTargetTile :false,
 	callbackScope : this,
     engineInstanceReadyCallback : this.onEngineInstanceReady,
+	tileSelectCallback : this.onTileSelect, 
+	objectSelectCallback : this.onObjectSelect,
 	mapDataPath : "assets/map.xml", // the path to the xml file that defines map data, required
-	assetsToLoad : ["assets/sprites/btn_zoomIn.png","assets/sprites/btn_zoomOut.png","assets/sprites/floor_N.png","assets/sprites/wallCorner_N.png","assets/sprites/wallStraight_W.png","assets/sprites/wallStraight_E.png"] // array of paths to the assets that are desired to be loaded by traviso, no need to use if assets are already loaded to PIXI cache, default null,
+	assetsToLoad : ["assets/sprites/btn_zoomIn.png","assets/sprites/btn_zoomOut.png","assets/sprites/floor_N.png","assets/sprites/wallCorner_N.png","assets/sprites/wallStraight_W.png","assets/sprites/wallStraight_E.png","assets/sprites/blockHuge_N.png"] // array of paths to the assets that are desired to be loaded by traviso, no need to use if assets are already loaded to PIXI cache, default null,
 
 };
 
@@ -55,4 +58,13 @@ function onEngineInstanceReady(){
 	{
 		engine.zoomOut();
 	};
+}
+
+function onTileSelect(r,c){
+	var object =  new  TRAVISO.ObjectView(engine,4);
+	engine.addObjectToLocation(object,{r:r,c:c});
+}
+
+function onObjectSelect(object){
+	engine.removeObjectFromLocation(object);
 }

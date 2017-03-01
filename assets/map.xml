@@ -19,6 +19,11 @@
 				<f>assets/sprites/wallStraight_E.png</f>
 			</v>
 		 </object>
+		 <object id="4" movable="0" interactive="1"  s="1x1">
+			<v id="idle">
+				<f>assets/sprites/blockHuge_N.png</f>
+			</v>
+		 </object>
 	</objects>
 	<initial_controllable_location c="1" r="1" />
     <ground_map>
