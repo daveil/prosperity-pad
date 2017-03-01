@@ -26,13 +26,15 @@ var instanceConfig ={
 	tileSelectCallback : this.onTileSelect, 
 	objectSelectCallback : this.onObjectSelect,
 	mapDataPath : "assets/map.xml", // the path to the xml file that defines map data, required
-	assetsToLoad : ["assets/sprites/btn_zoomIn.png","assets/sprites/btn_zoomOut.png","assets/sprites/floor_N.png","assets/sprites/wallCorner_N.png","assets/sprites/wallStraight_W.png","assets/sprites/wallStraight_E.png","assets/sprites/blockHuge_N.png"] // array of paths to the assets that are desired to be loaded by traviso, no need to use if assets are already loaded to PIXI cache, default null,
+	assetsToLoad : ["assets/sprites/topview.gif","assets/sprites/btn_zoomIn.png","assets/sprites/btn_zoomOut.png","assets/sprites/floor_N.png","assets/sprites/wallCorner_N.png","assets/sprites/wallStraight_W.png","assets/sprites/wallStraight_E.png","assets/sprites/blockHuge_N.png"] // array of paths to the assets that are desired to be loaded by traviso, no need to use if assets are already loaded to PIXI cache, default null,
 
 };
 
 var engine = TRAVISO.getEngineInstance(instanceConfig);
 stage.addChild(engine);
 function onEngineInstanceReady(){
+	var topview = new PIXI.Sprite.fromFrame("assets/sprites/topview.gif");
+	stage.addChild(topview);
 	// create buttons
 	var btnZoomIn = new PIXI.Sprite.fromFrame("assets/sprites/btn_zoomIn.png");
 	stage.addChild(btnZoomIn);
@@ -40,6 +42,11 @@ function onEngineInstanceReady(){
 	stage.addChild(btnZoomOut);
 
 	 // set positions
+	topview.position.x = 655;
+	topview.scale.x = 0.4;
+	topview.scale.y = 0.4;
+	topview.alpha = 0.6;
+	topview.position.y = 8;
 	btnZoomIn.position.y = 8;
 	btnZoomOut.position.y = 8;
 	btnZoomIn.position.x = 8;
